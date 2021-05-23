@@ -21,12 +21,12 @@
 
 
 //Version 02
-var urlToBlock02=document.getElementById("utb");
-var urlList02=[urlToBlock02.value];
+let urlToBlock02=document.getElementById("utb");
+let urlList02=[urlToBlock02.value];
 console.log(urlList02);
 function AddWebsite() {
     
-    var DOMList=document.getElementById("blockedwebsites");
+    
    
     
     for (let index02 = 0; index02 < urlList02.length; index02++) 
@@ -38,15 +38,20 @@ function AddWebsite() {
        }
        else
        {
-            
-           
-           urlList02.push(urlToBlock02.value);
+           let UL=document.getElementById("blockedwebsites");
            var createList=document.createElement("li");
-           var createBtn=document.createElement("BUTTON");
-           createBtn.innerText="Delete Url";
-           DOMList.appendChild(createList);
-           createList.appendChild(createBtn);
-           createList.innerText = document.createTextNode(urlToBlock02.innerText);
+           UL.appendChild(createList);
+           createList.innerHTML=document.createTextNode(urlToBlock02);
+           urlList02.push(urlToBlock02.value);
+           
+           //var createBtn=document.createElement("BUTTON");
+           //createBtn.innerText="Delete Url";
+           
+           //createList.appendChild(createBtn);
+           //createList.innerHTML = document.createTextNode(urlToBlock02.innerText);
+           //DOMList.appendChild(createList);
+           //var blockedURL=document.createTextNode(urlToBlock02);
+           //DOMList.appendChild(createList);
            console.log(urlToBlock02.value + " has been blocked!");
            console.log(urlList02);
        }
