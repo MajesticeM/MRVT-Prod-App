@@ -40,8 +40,10 @@ function AddWebsite() {
        {
            let UL=document.getElementById("blockedwebsites");
            var createList=document.createElement("li");
+           var numberplate=document.createElement("input");
+           createList.appendChild(numberplate);
            UL.appendChild(createList);
-           createList.innerHTML=document.createTextNode(urlToBlock02);
+           createList.innerHTML=urlToBlock02.value;
            urlList02.push(urlToBlock02.value);
            
            //var createBtn=document.createElement("BUTTON");
